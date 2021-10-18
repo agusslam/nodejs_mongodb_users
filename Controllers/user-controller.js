@@ -2,7 +2,7 @@ const userModel = require('../Models/user-model')
 
 //page home awal
 exports.home = (req,res) => {
-    res.render('index')
+    res.render('index', {message: "successfuly get all data"})
 }
 
 //response all data for fetch
@@ -110,6 +110,27 @@ exports.userDel = (req,res) => {
     }).catch(err => {
         res.send({
             message: `Failed Delete ${err}` 
+        })
+    })
+}
+
+exports.userSearch = (req,res) => {
+    let keySearch = req.body.key
+    // console.log(keySearch)
+    userModel.find(
+        {
+            nama: { $regex: keySearch }
+        }
+    ).then(response => {
+        res.render('index', 
+            {
+            message: "search",
+            result: response
+            }
+        )  
+    }).catch(err => {
+        res.send({
+            message: `Failed Get By Key Search ${err}`
         })
     })
 }

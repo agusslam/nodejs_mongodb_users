@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             </ul>
-            <form class="d-flex" method="POST" action="/get-siswa-search">
+            <form class="d-flex" method="POST" action="/user-search">
                 <input class="form-control me-2 search-siswa" type="text" placeholder="Masukkan Nama User" aria-label="Search" name="key">
                 <button id="btn-search" class="btn btn-outline-light" type="submit">Cari</button>
             </form>
@@ -51,6 +51,22 @@
                       </thead>
                       <tbody id="list-data" class="list-table">
                         <!-- List Data Here -->
+                        <% if(message == 'search'){ %>
+                            <% for(let i=0 ; i < result.length ; i++){ %>
+                                <tr>
+                                    <th scope="row"><%= i+1 %></th>
+                                    <td><%= result[i].nama %></td>
+                                    <td><%= result[i].email %></td>
+                                    <td><%= result[i].alamat %></td>
+                                    <td><%= result[i].divisi %></td>
+                                    <td><%= result[i].tempat %></td>
+                                    <td><%= result[i].tgl %></td>
+                                    <td><%= result[i].cita %></td>
+                                    <td><%= result[i].harapan %></td>
+                                    <td><a href="/user-detail/<%= result[i]._id %>">Ubah</a> | <a href="/user-del/<%= result[i]._id %>}">Hapus</a></td>
+                                </tr>
+                            <% } %>
+                         <% } %>
                     </tbody>
                 </table>
             </div>
@@ -59,31 +75,33 @@
     </div>
     <!-- End Container -->
     <script type="text/javascript">
-        fetch('/user-getAll')
-            .then(response => { return response.json() })
-            .then(result =>{                    
-                let data = result
-                console.log(data.result)
-                const tabEl = document.querySelector('#list-data') 
-                for(let i=0 ; i<data.result.length ; i++){
-                    tabEl.innerHTML += `
-                                    <tr>
-                                        <th scope="row">${i+1}</th>
-                                        <td>${data.result[i].nama}</td>
-                                        <td>${data.result[i].email}</td>
-                                        <td>${data.result[i].alamat}</td>
-                                        <td>${data.result[i].divisi}</td>
-                                        <td>${data.result[i].tempat}</td>
-                                        <td>${data.result[i].tgl}</td>
-                                        <td>${data.result[i].cita}</td>
-                                        <td>${data.result[i].harapan}</td>
-                                        <td><a href="/user-detail/${data.result[i]._id}">Ubah</a> | <a href="/user-del/${data.result[i]._id}">Hapus</a></td>
-                                    </tr>
-                    `
-                }                
-            })
-            .catch(err => { console.log(`Error : ${err}`) })
-    
+    let message = '<%= message %>'
+        if(message != "search"){
+            fetch('/user-getAll')
+                .then(response => { return response.json() })
+                .then(result =>{                    
+                    let data = result
+                    console.log(data.result)
+                    const tabEl = document.querySelector('#list-data') 
+                    for(let i=0 ; i<data.result.length ; i++){
+                        tabEl.innerHTML += `
+                                        <tr>
+                                            <th scope="row">${i+1}</th>
+                                            <td>${data.result[i].nama}</td>
+                                            <td>${data.result[i].email}</td>
+                                            <td>${data.result[i].alamat}</td>
+                                            <td>${data.result[i].divisi}</td>
+                                            <td>${data.result[i].tempat}</td>
+                                            <td>${data.result[i].tgl}</td>
+                                            <td>${data.result[i].cita}</td>
+                                            <td>${data.result[i].harapan}</td>
+                                            <td><a href="/user-detail/${data.result[i]._id}">Ubah</a> | <a href="/user-del/${data.result[i]._id}">Hapus</a></td>
+                                        </tr>
+                        `
+                    }                
+                })
+                .catch(err => { console.log(`Error : ${err}`) })
+            }
     </script>
 </body>
 </html>

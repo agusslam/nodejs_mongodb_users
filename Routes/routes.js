@@ -16,5 +16,7 @@ routes.get('/user-detail/:id', userController.userDetail)
 routes.post('/user-upd/:id', userController.userUpd)
 //user del
 routes.get('/user-del/:id', userController.userDel)
+//user search
+routes.post('/user-search', userController.userSearch)
 
 module.exports = routes
