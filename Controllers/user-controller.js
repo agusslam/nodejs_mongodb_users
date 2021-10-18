@@ -99,3 +99,17 @@ exports.userUpd = (req,res) => {
         })
     })
 }
+
+exports.userDel = (req,res) => {
+    userModel.deleteOne(
+        {
+            _id: req.params.id
+        }
+    ).then(response => {
+        res.render('index', {message: "Success Delete Data"})
+    }).catch(err => {
+        res.send({
+            message: `Failed Delete ${err}` 
+        })
+    })
+}

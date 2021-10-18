@@ -14,5 +14,7 @@ routes.post('/user-newpost', userController.postNewUser)
 routes.get('/user-detail/:id', userController.userDetail)
 //post update
 routes.post('/user-upd/:id', userController.userUpd)
+//user del
+routes.get('/user-del/:id', userController.userDel)
 
 module.exports = routes
