@@ -8,10 +8,8 @@ var Schema = new Mongoose.Schema(
     divisi: { type:String},
     tempat: { type:String},
     tgl: { type:String},
-    hobby: { type:String},
+    cita: { type:String},
     harapan: { type:String},
-    gender: { type:String},
-    status: { type:String},
     }
 )
 

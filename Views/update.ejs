@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD User</title>
+    <link rel="stylesheet" href="/plugin/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- start navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">LOGO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+            <form class="d-flex" method="POST" action="/get-siswa-search">
+                <input class="form-control me-2 search-siswa" type="text" placeholder="Masukkan Nama User" aria-label="Search" name="key">
+                <button id="btn-search" class="btn btn-outline-light" type="submit">Cari</button>
+            </form>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <!-- Start Container -->
+    <div class="container-fluid">
+        <div class="row wrapper-contain">            
+            <div class="col-md-12 head-tambah">
+                <h4>Form Ubah User</h4>
+            </div>
+            <div class="col-md-12 contain-tambah">
+                <form id="input-form" method="POST" action="/user-upd/<%= data._id %>">
+                    <div class="row wrapper-input">
+                        <div class="col-md-6">
+                            <label for="inputName" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="inputName" name="nama" placeholder="Masukkan Nama Lengkap" value="<%= data.nama  %>">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="inputEmail" name="email" placeholder="Masukkan Email" value="<%= data.email  %>">
+                        </div>
+                    </div>
+                    <div class="col-md-12 wrapper-input">
+                        <label for="inputAlamat" class="form-label">Alamat</label>
+                        <input type="text" class="form-control" id="inputAlamat" name="alamat" placeholder="Masukkan Alamat" value="<%= data.alamat  %>">
+                    </div>
+                    <div class="row wrapper-input">
+                        <div class="col-md-4">
+                            <label for="inputdivisi" class="form-label">Divisi</label>
+                            <input type="text" class="form-control" id="inputdivisi" name="divisi" placeholder="Masukkan Divisi" value="<%= data.divisi  %>">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputlahir" class="form-label">Tempat Lahir</label>
+                            <input type="text" class="form-control" id="inputlahir" name="tempat" placeholder="Masukkan tempat lahir" value="<%= data.tempat  %>">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputtgl" class="form-label">Tanggal Lahir</label>
+                            <input type="date" class="form-control" id="inputtgl" name="tgl" value="<%= data.tgl  %>">
+                        </div>
+                    </div>
+                    <div class="row wrapper-input">
+                        <div class="col-md-6">
+                            <label for="cita" class="form-label">Cita-cita</label>
+                            <textarea type="text" class="form-control" id="cita" name="cita" placeholder="Uraikan cita-cita"><%= data.cita  %></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="harapan" class="form-label">Harapan</label>
+                            <textarea type="text" class="form-control" id="harapan" name="harapan" placeholder="Uraikan harapan"><%= data.harapan  %></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12 wrapper-input">
+                        <!-- <input type="submit" value="Kirim" class="styleSub w-100"> -->
+                        <button type="submit" value="Kirim" class="btn btn-outline-custom w-100">Kirim</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+    <!-- End Container -->    
+</body>
+</html>

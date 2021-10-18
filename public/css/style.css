@@ -2,41 +2,37 @@
     background-color: #55ACEE;
 }
 
-.container-fluid .wrapper-form {
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-.container-fluid .form-tambah {
+.container-fluid .wrapper-contain {
     margin-top: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
-.container-fluid .form-tambah .wrapper-input {
+.btn-outline-custom {
+    border-radius: 5px;
+    border: 1px solid #55ACEE;
+}
+
+.btn-outline-custom:hover {
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    background-color: #55ACEE ;
+}
+
+.container-fluid .table-list {
+    margin-top: 10px;
+}
+
+.contain-tambah {
+    margin-top: 10px;
+}
+
+.wrapper-input {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.container-fluid .daftar-siswa {
-    margin-top: 25px;
-}
-
-.wrap {
-    border: 1px solid gray;
+.list-table {
+    font-size: 14px;
     text-align: center;
-}
-
-.wrapper-tambah {
-    border: 1px solid gray;
-    border-radius: 10px;
-}
-
-.wrap-head {
-    background-color: rgba(85, 172, 238, 0.5);
-    text-align: center;
-    font-weight: 400;
-}
-
-.wrapper-over {
-    overflow: scroll;
-    height: 180px;
 }
