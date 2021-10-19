@@ -63,7 +63,7 @@
                                     <td><%= result[i].tgl %></td>
                                     <td><%= result[i].cita %></td>
                                     <td><%= result[i].harapan %></td>
-                                    <td><a href="/user-detail/<%= result[i]._id %>">Ubah</a> | <a href="/user-del/<%= result[i]._id %>}">Hapus</a></td>
+                                    <td><a class="btn-aksi" href="/user-detail/<%= result[i]._id %>">Ubah</a>  <a class="btn-aksi2" href="/user-del/<%= result[i]._id %>">Hapus</a></td>
                                 </tr>
                             <% } %>
                          <% } %>
@@ -95,7 +95,7 @@
                                             <td>${data.result[i].tgl}</td>
                                             <td>${data.result[i].cita}</td>
                                             <td>${data.result[i].harapan}</td>
-                                            <td><a href="/user-detail/${data.result[i]._id}">Ubah</a> | <a href="/user-del/${data.result[i]._id}">Hapus</a></td>
+                                            <td><a class="btn-aksi" href="/user-detail/${data.result[i]._id}">Ubah</a>  <a class="btn-aksi2" href="/user-del/${data.result[i]._id}">Hapus</a></td>
                                         </tr>
                         `
                     }                

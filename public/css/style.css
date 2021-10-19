@@ -36,3 +36,37 @@
     font-size: 14px;
     text-align: center;
 }
+
+.btn-aksi {
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid green;
+    padding: 3px 3px;
+    color: black;
+    font-size: 10px;
+}
+.btn-aksi:hover {
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid rgba(0,129,52,0.5);
+    padding: 3px 3px;
+    color: black;
+    background-color: rgba(0,129,52,0.5);
+}
+
+.btn-aksi2 {
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid rgba(220,207,15,0.5);
+    padding: 3px 3px;
+    color: black;
+    font-size: 10px;
+}
+.btn-aksi2:hover {
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid rgba(220,207,15,0.5);
+    padding: 3px 3px;
+    color: black;
+    background-color: rgba(220,207,15,0.5);    
+}
