@@ -38,6 +38,8 @@
                     <thead>
                         <tr class="text-center">
                           <th scope="col">#</th>
+                          <th scope="col">Username</th>
+                          <th scope="col">Password</th>
                           <th scope="col">Nama</th>
                           <th scope="col">Email</th>
                           <th scope="col">Alamat</th>
@@ -55,6 +57,8 @@
                             <% for(let i=0 ; i < result.length ; i++){ %>
                                 <tr>
                                     <th scope="row"><%= i+1 %></th>
+                                    <td><%= result[i].username %></td>
+                                    <td><%= result[i].password %></td>
                                     <td><%= result[i].nama %></td>
                                     <td><%= result[i].email %></td>
                                     <td><%= result[i].alamat %></td>
@@ -87,6 +91,8 @@
                         tabEl.innerHTML += `
                                         <tr>
                                             <th scope="row">${i+1}</th>
+                                            <td>${data.result[i].username}</td>
+                                            <td>${data.result[i].password}</td>
                                             <td>${data.result[i].nama}</td>
                                             <td>${data.result[i].email}</td>
                                             <td>${data.result[i].alamat}</td>

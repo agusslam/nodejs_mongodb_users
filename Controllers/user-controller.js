@@ -34,6 +34,8 @@ exports.userTambah = (req,res) => {
 exports.postNewUser = (req,res) => {
     // res.send('tampilan create')
     const user = new userModel({
+        username: req.body.username,
+        password: req.body.password,
         nama : req.body.nama,
         email: req.body.email,
         alamat: req.body.alamat,
@@ -79,6 +81,8 @@ exports.userUpd = (req,res) => {
         { _id: req.params.id },
         { $set: 
             {
+                username: req.body.username,
+                password: req.body.password,
                 nama : req.body.nama,
                 email: req.body.email,
                 alamat: req.body.alamat,
